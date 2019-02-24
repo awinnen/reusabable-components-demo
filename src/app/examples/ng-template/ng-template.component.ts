@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { beverages } from 'src/app/shared/testdata';
+import { beverages } from '../../shared/testdata';
 
 @Component({
   selector: 'app-ng-template',
