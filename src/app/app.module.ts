@@ -4,19 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgContentComponent } from './examples/ng-content/ng-content.component';
-import { TileComponent } from './components/tile/tile.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
+import { NgContentModule } from 'src/app/examples/ng-content/ng-content.module';
+import { NgTemplateModule } from 'src/app/examples/ng-template/ng-template.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NgContentComponent,
-    TileComponent,
-    ProductListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgContentModule,
+    NgTemplateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

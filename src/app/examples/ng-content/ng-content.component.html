@@ -2,7 +2,7 @@
   <h2>Products:</h2>
 </div>
 <div class="product-list">
-  <app-tile *ngFor="let beverage of beverages">
+  <ngc-tile *ngFor="let beverage of beverages">
     <div class="projected-content">
       {{ beverage.name }}
       {{ beverage.fillingQuantity }}
@@ -10,5 +10,5 @@
         <li *ngFor="let ingredient of beverage.ingredients">{{ ingredient }}</li>
       </ul>
     </div>
-  </app-tile>
+  </ngc-tile>
 </div>

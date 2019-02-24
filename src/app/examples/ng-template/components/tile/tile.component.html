@@ -1,0 +1,7 @@
+<div class="tile">
+  <ng-template [ngTemplateOutlet]="tileTemplate" [ngTemplateOutletContext]=" { $implicit: product }"></ng-template>
+  <div class="tile-actions">
+    <input type="number" placeholder="amount" value="0" step="1"/>
+    <button class="cta-buy">Buy</button>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div>
+  <h2>Products:</h2>
+</div>
+<ngt-product-list [products]="beverages">
+  <ng-template let-product>
+    <div class="template-content">
+      {{ product.name }}
+      {{ product.fillingQuantity }}
+      <ul>
+        <li *ngFor="let ingredient of product.ingredients">{{ ingredient }}</li>
+      </ul>
+    </div>
+  </ng-template>
+</ngt-product-list>
