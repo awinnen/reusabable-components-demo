@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+ .tile {
+     height: 300px;
+     width: 300px;
+     border: 1px solid lightgray;
+     display: flex;
+     flex-direction: column;
+     margin: 10px 5px;
+     padding: 5px;
+
+     .tile-actions {
+         display: flex;
+         margin-top: auto;
+     }
+ }
+
+ .product-list {
+     display: flex;
+ }
