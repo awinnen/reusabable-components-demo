@@ -1,4 +1,4 @@
-import { Directive, TemplateRef } from '@angular/core';
+import { Directive, TemplateRef, NgModule } from '@angular/core';
 
 @Directive({
   selector: '[tileHeader]'
@@ -8,9 +8,9 @@ export class TileHeaderDirective {
 }
 
 @Directive({
-  selector: '[tile]'
+  selector: '[tileContent]'
 })
-export class TileDirective {
+export class TileContentDirective {
   constructor(public templateRef: TemplateRef<any>) { }
 }
 
@@ -27,3 +27,20 @@ export class TileActionsDirective {
 export class TileOverlayDirective {
   constructor(public templateRef: TemplateRef<any>) { }
 }
+
+@NgModule({
+  declarations: [
+    TileActionsDirective,
+    TileContentDirective,
+    TileHeaderDirective,
+    TileOverlayDirective
+  ],
+  exports: [
+    TileActionsDirective,
+    TileContentDirective,
+    TileHeaderDirective,
+    TileOverlayDirective
+  ]
+
+})
+export class HelperDirectivesModule { }

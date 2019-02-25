@@ -1,0 +1,44 @@
+<div>
+  <h2>Products with default Template:</h2>
+</div>
+<ngtwst-product-list [products]="beverages"></ngtwst-product-list>
+
+<div>
+  <h2>Products with custom Header Template</h2>
+</div>
+<ngtwst-product-list [products]="beverages">
+  <ng-template let-product tileHeader>
+    <h1>OFFER, Only Today:</h1>
+    {{ product.name }} <strong>{{ product.fillingQuantity }}</strong>
+  </ng-template>
+</ngtwst-product-list>
+
+
+<div>
+  <h2>Products with custom Header and Actions Template</h2>
+</div>
+<ngtwst-product-list [products]="beverages">
+  <ng-template let-product tileHeader>
+    <h1>pallet sale!!!</h1>
+    {{ product.name }} <strong>{{ product.fillingQuantity }}</strong>
+  </ng-template>
+  <ng-template let-product tileActions>
+    <button>Buy Pallette (100€)</button>
+  </ng-template>
+</ngtwst-product-list>
+
+<div>
+  <h2>Products with custom Header, (empty)Actions, (empty)Content and Overlay Template</h2>
+</div>
+<ngtwst-product-list [products]="beverages">
+  <ng-template let-product tileHeader>
+    <h1>Hover Me</h1>
+  </ng-template>
+  <ng-template let-product tileActions tileContent>
+  </ng-template>
+  <ng-template let-product tileOverlay>
+    <div style="display: flex; align-items: center; justify-content: center; height: 100%; font-size: 72pt;">
+      🥳
+    </div>
+  </ng-template>
+</ngtwst-product-list>

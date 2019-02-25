@@ -1,0 +1,35 @@
+<div class="tile">
+  <div class="tile-overlay">
+    <ng-template [ngTemplateOutlet]="tileOverlayTemplate || defaultOverlayHeaderTpl" [ngTemplateOutletContext]=" { $implicit: product }"></ng-template>
+  </div>
+  <div class="tile-header">
+    <ng-template [ngTemplateOutlet]="tileHeaderTemplate || defaultTileHeaderTpl" [ngTemplateOutletContext]=" { $implicit: product }"></ng-template>
+  </div>
+  <div class="tile-content">
+    <ng-template [ngTemplateOutlet]="tileContentTemplate || defaultTileContentTpl" [ngTemplateOutletContext]=" { $implicit: product }"></ng-template>
+  </div>
+
+  <div class="tile-actions">
+    <ng-template [ngTemplateOutlet]="tileActionsTemplate || defaultTileActionsTpl" [ngTemplateOutletContext]=" { $implicit: product }"></ng-template>
+  </div>
+</div>
+
+<ng-template let-product #defaultTileHeaderTpl>
+  {{ product.name }}
+  {{ product.fillingQuantity }}
+</ng-template>
+
+<ng-template let-product #defaultTileActionsTpl>
+  <input type="number" placeholder="amount" step="1" [(ngModel)]="data.amount" />
+  <button class="cta-buy">Buy ({{price}} €)</button>
+</ng-template>
+
+<ng-template let-product #defaultTileOverlayTpl>
+
+</ng-template>
+
+<ng-template let-product #defaultTileContentTpl>
+  <ul>
+    <li *ngFor="let ingredient of product.ingredients">{{ ingredient }}</li>
+  </ul>
+</ng-template>

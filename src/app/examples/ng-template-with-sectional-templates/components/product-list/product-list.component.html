@@ -1,0 +1,5 @@
+<section>
+  <div class="product-list">
+    <ngtwst-tile [product]="product" *ngFor="let product of products" [tileHeaderTemplate]="headerDirective?.templateRef" [tileActionsTemplate]="actionsDirective?.templateRef" [tileContentTemplate]="contentDirective?.templateRef" [tileOverlayTemplate]="overlayDirective?.templateRef"></ngtwst-tile>
+  </div>
+</section>

@@ -1,19 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
- .tile {
-     height: 300px;
-     width: 300px;
-     border: 1px solid lightgray;
-     display: flex;
-     flex-direction: column;
-     margin: 10px 5px;
-     padding: 5px;
+.tile {
+  height: 300px;
+  width: 300px;
+  border: 1px solid lightgray;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin: 10px 5px;
+  padding: 5px;
 
-     .tile-actions {
-         display: flex;
-         margin-top: auto;
-     }
- }
+  .tile-actions {
+    display: flex;
+    margin-top: auto;
+  }
 
- .product-list {
-     display: flex;
- }
+  .tile-overlay {
+    display: none;
+  }
+
+  &:hover .tile-overlay {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    height: 80%;
+    width: 100%;
+  }
+}
+
+.product-list {
+  display: flex;
+}
