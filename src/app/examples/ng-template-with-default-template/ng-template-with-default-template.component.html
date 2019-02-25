@@ -1,0 +1,21 @@
+<div>
+  <h2>Products with default Template:</h2>
+</div>
+<ngtwdt-product-list [products]="beverages"></ngtwdt-product-list>
+
+<div>
+  <h2>Products with custom Template:</h2>
+</div>
+<ngtwdt-product-list [products]="beverages">
+  <ng-template let-product>
+    <div class="template-content" style="background-color: lightyellow;">
+      <p>Name: {{ product.name }}</p>
+      <p>Quantity: {{ product.fillingQuantity }}</p>
+      <div>Ingredients:
+        <ol>
+          <li *ngFor="let ingredient of product.ingredients">{{ ingredient }}</li>
+        </ol>
+      </div>
+    </div>
+  </ng-template>
+</ngtwdt-product-list>

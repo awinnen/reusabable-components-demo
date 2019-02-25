@@ -1,0 +1,18 @@
+<div class="tile">
+  <ng-template [ngTemplateOutlet]="tileTemplate || defaultTileTpl" [ngTemplateOutletContext]=" { $implicit: product }"></ng-template>
+  <div class="tile-actions">
+    <input type="number" placeholder="amount" value="0" step="1"/>
+    <button class="cta-buy">Buy</button>
+  </div>
+</div>
+
+
+<ng-template let-product #defaultTileTpl>
+  <div class="template-content">
+    {{ product.name }}
+    {{ product.fillingQuantity }}
+    <ul>
+      <li *ngFor="let ingredient of product.ingredients">{{ ingredient }}</li>
+    </ul>
+  </div>
+</ng-template>
