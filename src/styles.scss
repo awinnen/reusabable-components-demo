@@ -27,6 +27,37 @@
   }
 }
 
+.selected .tile {
+  border-color: black;
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
 .product-list {
   display: flex;
+  flex-wrap: wrap;
+}
+
+
+.product-details {
+  width: 925px;
+  height: 200px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  border: 1px dashed aquamarine;
+}
+
+* {
+  box-sizing: border-box;
 }

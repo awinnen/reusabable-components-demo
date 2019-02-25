@@ -28,18 +28,27 @@ export class TileOverlayDirective {
   constructor(public templateRef: TemplateRef<any>) { }
 }
 
+@Directive({
+  selector: '[details]'
+})
+export class DetailsDirective {
+  constructor(public templateRef: TemplateRef<any>) { }
+}
+
 @NgModule({
   declarations: [
     TileActionsDirective,
     TileContentDirective,
     TileHeaderDirective,
-    TileOverlayDirective
+    TileOverlayDirective,
+    DetailsDirective
   ],
   exports: [
     TileActionsDirective,
     TileContentDirective,
     TileHeaderDirective,
-    TileOverlayDirective
+    TileOverlayDirective,
+    DetailsDirective
   ]
 
 })

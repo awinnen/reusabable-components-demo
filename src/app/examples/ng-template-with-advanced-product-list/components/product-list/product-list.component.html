@@ -1,0 +1,17 @@
+<section>
+  <div class="product-list" #tileContainer>
+    <ngtwapl-tile [product]="product" *ngFor="let product of products" [tileHeaderTemplate]="headerDirective?.templateRef" [tileActionsTemplate]="actionsDirective?.templateRef" [tileContentTemplate]="contentDirective?.templateRef" [tileOverlayTemplate]="overlayDirective?.templateRef"></ngtwapl-tile>
+  </div>
+</section>
+
+<ng-template let-product #defaultDetailsTempplate>
+  <div class="product-details">
+    <figure style="width: 25%; height: 100%; padding: 10px;">
+      <div style="height: 100%; padding: 10px;" [style.background-color]="product.color"></div>
+    </figure>
+    <div class="content" style="width: 75%">
+    {{ product.description }}
+    </div>
+    <button (click)="closeDetails()" style="position: absolute; top: 5px; right: 5px;">&times;</button>
+  </div>
+</ng-template>
