@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit {
   @ViewChild("tileContainer")
   public tileContainer: ElementRef;
 
-  @ViewChild("defaultDetailsTempplate")
+  @ViewChild("defaultDetailsTemplate")
   public defaultDetailsTemplate: TemplateRef<any>;
 
   private detailsViewRef: ViewContainerRef;

@@ -1,10 +1,16 @@
 <section>
   <div class="product-list" #tileContainer>
-    <ngtwapl-tile [product]="product" *ngFor="let product of products" [tileHeaderTemplate]="headerDirective?.templateRef" [tileActionsTemplate]="actionsDirective?.templateRef" [tileContentTemplate]="contentDirective?.templateRef" [tileOverlayTemplate]="overlayDirective?.templateRef"></ngtwapl-tile>
+    <ngtwapl-tile 
+    [product]="product" *ngFor="let product of products" 
+    [tileHeaderTemplate]="headerDirective?.templateRef" 
+    [tileActionsTemplate]="actionsDirective?.templateRef" 
+    [tileContentTemplate]="contentDirective?.templateRef" 
+    [tileOverlayTemplate]="overlayDirective?.templateRef">
+  </ngtwapl-tile>
   </div>
 </section>
 
-<ng-template let-product #defaultDetailsTempplate>
+<ng-template let-product #defaultDetailsTemplate>
   <div class="product-details">
     <figure style="width: 25%; height: 100%; padding: 10px;">
       <div style="height: 100%; padding: 10px;" [style.background-color]="product.color"></div>
