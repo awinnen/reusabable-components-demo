@@ -9,15 +9,15 @@ import { TileComponent } from '../tile/tile.component';
 })
 export class ProductListComponent implements OnInit {
   @ContentChild(TileContentDirective)
-  public contentDirective: TemplateRef<any>;
+  public contentDirective: TileContentDirective;
   @ContentChild(TileHeaderDirective)
-  public headerDirective: TemplateRef<any>;
+  public headerDirective: TileHeaderDirective;
   @ContentChild(TileActionsDirective)
-  public actionsDirective: TemplateRef<any>;
+  public actionsDirective: TileActionsDirective;
   @ContentChild(TileOverlayDirective)
-  public overlayDirective: TemplateRef<any>;
+  public overlayDirective: TileOverlayDirective;
   @ContentChild(DetailsDirective)
-  public detailsDirective: TemplateRef<any>;
+  public detailsDirective: DetailsDirective;
   @Input()
   public products: any[];
 
@@ -47,7 +47,7 @@ export class ProductListComponent implements OnInit {
       const lastItemOfRowIdx = rowOfItem * amountOfItemsPerRow - 1;
       const viewContainerIdx = lastItemOfRowIdx > productTiles.length - 1 ? productTiles.length - 1 : lastItemOfRowIdx;
       this.detailsViewRef = productTiles[viewContainerIdx].viewContainerRef;
-      this.detailsViewRef.createEmbeddedView(this.detailsDirective || this.defaultDetailsTemplate, { $implicit: tile.product }); 
+      this.detailsViewRef.createEmbeddedView(this.detailsDirective ? this.detailsDirective.templateRef : this.defaultDetailsTemplate, { $implicit: tile.product, data: tile.data }); 
       this.selectedTile = tile;
     }
   }

@@ -8,13 +8,13 @@ import { TileContentDirective, TileHeaderDirective, TileActionsDirective, TileOv
 })
 export class ProductListComponent implements OnInit {
   @ContentChild(TileContentDirective)
-  public contentDirective: TemplateRef<any>;
+  public contentDirective: TileContentDirective;
   @ContentChild(TileHeaderDirective)
-  public headerDirective: TemplateRef<any>;
+  public headerDirective: TileHeaderDirective;
   @ContentChild(TileActionsDirective)
-  public actionsDirective: TemplateRef<any>;
+  public actionsDirective: TileActionsDirective;
   @ContentChild(TileOverlayDirective)
-  public overlayDirective: TemplateRef<any>;
+  public overlayDirective: TileOverlayDirective;
   @Input()
   public products: any[];
   constructor() { }

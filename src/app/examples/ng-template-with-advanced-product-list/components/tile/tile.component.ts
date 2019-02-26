@@ -22,7 +22,7 @@ export class TileComponent implements OnInit {
   @Input()
   public product: any;
 
-  public data: { amount: number } = { amount: 0 };
+  public data: any = { amount: 0 };
 
   public get price(): number {
     return this.data.amount * this.product.price;

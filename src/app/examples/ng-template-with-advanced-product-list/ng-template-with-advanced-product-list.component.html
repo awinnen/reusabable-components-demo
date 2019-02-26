@@ -2,3 +2,60 @@
   <h2>Products with clickable tiles:</h2>
 </div>
 <ngtwapl-product-list [products]="beverages"></ngtwapl-product-list>
+
+<div>
+  <h2>Mobile contracts with orderform:</h2>
+</div>
+<ngtwapl-product-list [products]="contracts">
+  <ng-template let-product tileHeader>
+    <h3>{{ product.name }}</h3>
+  </ng-template>
+  <ng-template let-product tileActions>
+    <button>Order</button>
+  </ng-template>
+  <ng-template let-product tileContent>
+    <p>Speed: {{product.speed}} Mbit/s</p>
+    <p>ContractPeriod: {{ product.contractPeriod }} months</p>
+    <p>Price: {{product.price}}€/Month</p>
+  </ng-template>
+  <ng-template details let-product let-data="data">
+    <form style="width: 925px; margin: 10px; padding: 5px;" (ngSubmit)="showAlert(data)" ngNativeValidate>
+      <h4>Orderform {{product.name }}</h4>
+      <style>
+        div {
+          margin-bottom: 5px;
+        }
+        div label {
+          display: inline-block;
+          width: 25%;
+        }
+        div input {
+          width: 75%;
+        }
+      </style>
+      <div>
+        <label>Name</label>
+        <input type="text" name="name" [(ngModel)]="data.name" required>
+      </div>
+      <div>
+        <label>Surname</label>
+        <input type="text" name="surname" [(ngModel)]="data.surname" required>
+      </div>
+      <div>
+        <label>Age</label>
+        <input type="number" name="age" [(ngModel)]="data.age" required>
+      </div>
+      <div>
+        <label>Address</label>
+        <input type="text" name="address" [(ngModel)]="data.address" required>
+      </div>
+      <div>
+        <label>Amount</label>
+        <input type="number" name="amount" [(ngModel)]="data.amount" required>
+      </div>
+      <div>
+        <button type="submit">Submit order</button>
+      </div>
+    </form>
+  </ng-template>
+</ngtwapl-product-list>
